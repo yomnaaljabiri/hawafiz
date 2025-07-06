@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom, #0d1b2a, #ffffff); /* 🔥 أزرق غامق للأبيض */
+    color: #333; /* نصوص أغمق عشان تبين عالأبيض */
+    overflow-x: hidden;
+}
+
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* النجوم */
+#stars img {
+    position: absolute;
+    z-index: 1;
+}
+
+/* العنوان */
+.main-title {
+    text-align: center;
+    margin-top: 4vh;   /* قريب للتوب */
+    margin-bottom: 4vh; /* مسافة واضحة قبل البوديوم */
+    font-size: 5vw;
+    color: #ffffff;
+    text-shadow: 0 0 1.5vw #000000;
+}
+.title-container h1 {
+  color: #fff; /* أو اللون اللي بدك */
+}
+
+
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* للوسط */
+  gap: 15px; /* مسافة بين الصورة والنص */
+  margin-bottom: 30px;
+}
+
+.title-image {
+  width: 60px; /* حجم الصورة */
+  height: auto;
+}
+
+
+
+/* بوديوم */
+#sectionOne {
+    
+    min-height: 110vh; /* 🔥 طول إضافي */
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
+}
+
+
+
+
+#podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 🏁 القاعدة ثابتة */
+    gap: 2vw;
+    margin-top: 30vh;
+}
+
+.podium.first {
+    height: min(20vh, 180px); /* أطول واحد أقصر شوي */
+}
+
+.podium.second {
+    height: min(15vh, 140px); /* الثاني أقصر */
+}
+
+.podium.third {
+    height: min(12vh, 120px); /* الثالث الأقصر */
+}
+
+
+.podium {
+    margin-top: -10vh;
+    width: min(10vw, 100px);
+    background:#2a4f77;
+    border-radius: 1vw;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.podium span {
+    color: #ffffff; /* 👈 ذهبي كمثال */
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+
+
+
+/* صور المسبارات موزعة أبعد */
+#floatingImages img:nth-child(1) { position: absolute; top: 25vh; left: 7vw; width: 19vw; }
+#floatingImages img:nth-child(2) { position: absolute; top: 60vh; left: 70vw; width: 20vw; }
+#floatingImages img:nth-child(3) { position: absolute; top: 42vh; left: 13vw; width: 15vw; }
+#floatingImages img:nth-child(4) { position: absolute; top: 46vh; left: 84vw; width: 14vw; }
+#floatingImages img:nth-child(5) { position: absolute; top: 40vh; left: 70vw; width: 10vw; }
+#floatingImages img:nth-child(6) { position: absolute; top: 60vh; left: 13vw; width: 15vw; }
+#floatingImages img:nth-child(7) { position: absolute; top: 52vh; left: 7vw; width: 8vw; }
+#floatingImages img:nth-child(8) { position: absolute; top: 27vh; left: 85vw; width: 9vw; }
+@media screen and (min-width: 1024px) {
+    #floatingImages img:nth-child(1) { width: 14vw; }
+    #floatingImages img:nth-child(2) { width: 15vw; }
+    #floatingImages img:nth-child(3) { width: 12vw; }
+    #floatingImages img:nth-child(4) { width: 11vw; }
+    #floatingImages img:nth-child(5) { width: 8vw; }
+    #floatingImages img:nth-child(6) { width: 12vw; }
+    #floatingImages img:nth-child(7) { width: 6vw; }
+    #floatingImages img:nth-child(8) { width: 6.5vw; }
+}
+.float{
+    opacity: 70%;
+}
+
+
+
+/* قائمة الطلائع */
+#teams {
+     margin-top: -40vh;
+    padding: 50px 20px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team div:first-child {
+  width: 7vw; /* ياخذ 12% من عرض الشاشة */
+}
+
+
+
+.bar {
+  flex: 1; /* البار ياخذ المساحة المتبقية */
+}
+
+.points {
+  width: 50px; /* عرض ثابت للنقاط */
+  text-align: right;
+}
+.bar {
+  background: #ccc; /* البار السكني */
+  border-radius: 10px;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  background: #2a4f77; /* الأزرق */
+  height: 100%;
+  width: 0%; /* يبدأ فارغ */
+  border-radius: 10px;
+  transition: width 1.5s ease-out; /* أنيميشن */
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    /* 🎯 البوديوم أعرض */
+    #podium {
+        width: 100%; /* كان مثلا 70% أو 80% */
+        margin: 0 auto;
+    }
+
+    /* 🎯 المسافة بين العنوان والبوديوم */
+    .main-title {
+        margin-bottom: 35vh; /* كان 5vh أو أكثر → صغرنا */
+    }
+
+    /* 🎯 المسافة بين البوديوم والطلائع */
+    #teams {
+        margin-top: -40vh; /* شد الطلائع لفوق شوي */
+    }
+     .title-container {
+    flex-direction: column; /* العنوان فوق والصورة تحت */
+    gap: 10px;
+  }
+
+  #podium {
+    margin-top: 190px; /* نزل البوديوم شوي */
+  }
+  .podium.first {
+    height: 60px; /* كان كبير جدًا، قصّرناه */
+  }
+  .podium.second {
+    height: 45px;
+  }
+  .podium.third {
+    height: 30px;
+  }
+}
